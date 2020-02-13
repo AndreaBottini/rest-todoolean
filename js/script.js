@@ -10,6 +10,14 @@ $(document).ready(function() {
     console.log('prova');
     //-3 richiamo funzione add elemnts che mi permette di stmapare e aggiugere elementi-
     addElements();
+
+    $(document).on('click', '.delete-element', function(){
+      var thisDeleteItem = $(this);
+      var numberId = $(this).parent().attr('data-id');
+      console.log(numberId);
+
+      // deleteElements(id)
+    })
   });
 });
 
@@ -29,6 +37,7 @@ function printElements(){
         console.log(thisElement);
         var context = {
           text: thisElement.text,
+          id: thisElement.id
         };
         var html = template(context);
         $('.list').append(html);
@@ -59,3 +68,19 @@ function addElements() {
     }
   });
 };
+
+// // -3 funzione per eliminare elementi
+// function deleteElements(id) {
+//   $.ajax({
+//     url: 'http://157.230.17.132:3003/todos/' + id,
+//     method: 'DELETE',
+//     success: function(data) {
+//       $('ul.list').html('');
+//       //richiamo funzione stampa elementi per far comparire gli stampati precedenti e quello che ho aggiunto
+//       printElements();
+//     },
+//     error: function(request, state, errors) {
+//       alert('è avvenuto un errore');
+//     }
+//   });
+// }
