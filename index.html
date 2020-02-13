@@ -8,7 +8,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- HANDLEBARS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.js" integrity="sha256-v28e/OFwH4PmlZT+LbqfwlMOE1hImPNesl1Ha52e6pk=" crossorigin="anonymous"></script>
-  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Esercizio Lista</title>
 </head>
 <body>
   <input id="input_write" type="text" name="" value="">
@@ -21,12 +22,13 @@
 
   <script id="list-template" type="text/x-handlebars-template">
   <div class="container">
-    <li class="current_element data-id={{id}}">
+    <li class="current_element" data-id="{{id}}">
       {{text}}
+      <div class="delete_element">
+        X
+      </div>
     </li>
-    <div class="delete-element">
-      X
-    </div>
+
   </div>
   </script>
   <script src="js/script.js" charset="utf-8"></script>
